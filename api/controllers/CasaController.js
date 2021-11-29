@@ -22,6 +22,16 @@ class CasaController {
         }  
     }
 
+    static async criaCasa(req, res) {
+        const novaCasa = req.body
+        try {
+        const novaCasaCriada = await database.casa.create(novaCasa)
+        return res.status(200).json(novaCasaCriada)
+        } catch(error){
+            return res.status(500).json(error.message)
+        }
+    }
+
 
 }
 
