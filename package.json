@@ -1,0 +1,31 @@
+{
+  "name": "resilia-imobiliaria-api-modulo-4",
+  "version": "0.0.1",
+  "description": "Projeto de fim de módulo do Bootcamp Resilia Web Dev Full Stack",
+  "main": "./api/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./api/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emanueljulio1/Resilia-Imobiliaria-API-Modulo-4.git"
+  },
+  "author": "Emanuel, Joyce, Rafael, Rodrigo, Shayan.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emanueljulio1/Resilia-Imobiliaria-API-Modulo-4/issues"
+  },
+  "homepage": "https://github.com/emanueljulio1/Resilia-Imobiliaria-API-Modulo-4#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mysql2": "^2.3.3",
+    "path": "^0.12.7",
+    "sequelize": "^6.12.0-alpha.1",
+    "sequelize-cli": "^6.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
