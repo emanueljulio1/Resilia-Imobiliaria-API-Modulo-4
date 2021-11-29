@@ -9,6 +9,20 @@ class CasaController {
             return res.status(500).json(error.message)
         }
     }
+
+    static async pegaUmaCasa(req, res){
+        const { id } = req.params
+        try{
+            const umaCasa = await database.casa.findOne({
+                where: { id: Number(id) }
+            })
+        return res.status(200).json(umaCasa) }
+        catch (error){
+            return res.status(500).json(error.message)
+        }  
+    }
+
+
 }
 
 module.exports = CasaController
