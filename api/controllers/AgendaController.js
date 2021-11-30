@@ -34,6 +34,17 @@ static async pegaUmAgendamento(req, res){
     }
 }
 
+static async atualizaAgenda(req, res) {
+    const { id } = req.params   
+    const novasAgendas = req.body
+    try {
+        await database.agenda.update(novasAgendas,{ where: { id: Number(id) }})
+        const agendaAtualizada =  await database.agenda.findOne({where: { id: Number(id) } })
+        return res.status(200).json(agendaAtualizada)
+    }catch(error) {
+        return res.status(500).json(error.message)
+    }
+}
 
 }
 module.exports = AgendaController
