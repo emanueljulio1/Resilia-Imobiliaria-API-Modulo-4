@@ -24,6 +24,15 @@ static async pegaUmAgendamento(req, res){
     }  
   }
 
+  static async criaAgendamento(req, res) {
+    const novaAgenda = req.body
+    try {
+    const novaAgendaCriada = await database.agenda.create(novaAgenda)
+    return res.status(200).json(novaAgendaCriada)
+    } catch(error){
+        return res.status(500).json(error.message)
+    }
+}
 
 
 }
