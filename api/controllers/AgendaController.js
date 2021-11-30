@@ -46,5 +46,15 @@ static async atualizaAgenda(req, res) {
     }
 }
 
+static async apagaAgendamento(req, res){
+    const { id } = req.params   
+    try{
+        await database.agenda.destroy({where: { id: Number(id) } })
+        return res.status(200).json({message: `id ${id} deletado`})
+    } catch(error){
+        return res.status(500).json(error.message)
+    }
+}
+
 }
 module.exports = AgendaController
