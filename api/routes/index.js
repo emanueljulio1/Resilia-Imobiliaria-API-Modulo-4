@@ -1,5 +1,8 @@
 const express = require('express')
 const usuario = require('./usuarioRoute')
+
+const agenda = require('./agendaRoute')
+
 module.exports = app => {
     app.use((req, res, next) => {
         console.log(req.headers.host, new Date().toLocaleTimeString());
@@ -8,4 +11,7 @@ module.exports = app => {
     app.use(express.json())
 
     app.use(usuario)
+
+    app.use(agenda)
+
 }
