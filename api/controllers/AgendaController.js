@@ -1,7 +1,7 @@
 const database = require('../models')
 
 class AgendaController {
-    static async pegaTodaAgendas(req,res){
+    static async pegaTodaAgenda(req,res){
         try{
         const todasAsAgendas = await database.agenda.findAll()
         return res.status(200).json(todasAsAgendas)
